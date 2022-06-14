@@ -8,7 +8,7 @@
 import SwiftUI
 
 // Need to create generic button for ButtonUIView
-// use forEarch in it and then customize it
+// use forEarch for it in ButtonsUIView and then customize it there
 
 struct ButtonUIView: View {
     @State private var buttonDisabled:Bool = true
@@ -18,8 +18,8 @@ struct ButtonUIView: View {
             // code
         }, label: {
             Image(systemName: "power")
-                .resizable()
-                .frame(width: 50, height: 50)
+                .resizable() // all 3 buttons need this
+                .frame(width: 50, height: 50) // all 3 buttons need this
                 .foregroundColor(buttonDisabled ? .black : .green)
                 .onTapGesture {
                     withAnimation(.easeInOut(duration: 0.2)) {
