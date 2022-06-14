@@ -47,7 +47,15 @@ struct ButtonsUIView: View {
                     .foregroundColor(buttonDisabled ? .gray.opacity(0.25) : .black)
             })
             .disabled(buttonDisabled)
+            }
+        
+        HStack(spacing: 26) {
+            ForEach(0..<3) { index in
+                ButtonUIView()
+                // is this the correct approach?
+            }
         }
+
     }
 }
 

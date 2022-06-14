@@ -16,6 +16,7 @@ struct LightUIView: View {
             .overlay(Circle()
                 .trim(from: 0.53, to: 0.97)
                         .stroke(.gray, lineWidth: 8))
+                        .shadow(radius: 10)
             .padding(.top, 12.0)
     }
 }
