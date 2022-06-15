@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// Timer here is just for testing stuff
+
 struct LightsUIView: View {
     
     let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
@@ -21,6 +23,20 @@ struct LightsUIView: View {
                 self.count += 1
             }
         }
+    }
+}
+
+struct LightUIView: View {
+    var body: some View {
+        Circle()
+            .fill(.gray)
+            .opacity(0.25)
+            .frame(width: 100, height: 100)
+            .overlay(Circle()
+                .trim(from: 0.53, to: 0.97)
+                        .stroke(.gray, lineWidth: 8))
+                        .shadow(radius: 10)
+            .padding(.top, 12.0)
     }
 }
 

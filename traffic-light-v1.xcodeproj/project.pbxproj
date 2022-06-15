@@ -12,9 +12,7 @@
 		B4DD81EE2857DFEF00B2F06F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4DD81ED2857DFEF00B2F06F /* Assets.xcassets */; };
 		B4DD81F12857DFEF00B2F06F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4DD81F02857DFEF00B2F06F /* Preview Assets.xcassets */; };
 		B4DD81F82857E02800B2F06F /* ButtonsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD81F72857E02800B2F06F /* ButtonsUIView.swift */; };
-		B4DD81FA2857E07D00B2F06F /* ButtonUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD81F92857E07D00B2F06F /* ButtonUIView.swift */; };
 		B4DD81FC2857E0BA00B2F06F /* LightsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD81FB2857E0BA00B2F06F /* LightsUIView.swift */; };
-		B4DD81FE2857E0F800B2F06F /* LightUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD81FD2857E0F800B2F06F /* LightUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,9 +22,7 @@
 		B4DD81ED2857DFEF00B2F06F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4DD81F02857DFEF00B2F06F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B4DD81F72857E02800B2F06F /* ButtonsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsUIView.swift; sourceTree = "<group>"; };
-		B4DD81F92857E07D00B2F06F /* ButtonUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUIView.swift; sourceTree = "<group>"; };
 		B4DD81FB2857E0BA00B2F06F /* LightsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightsUIView.swift; sourceTree = "<group>"; };
-		B4DD81FD2857E0F800B2F06F /* LightUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +58,7 @@
 				B4DD81E92857DFEC00B2F06F /* traffic_light_v1App.swift */,
 				B4DD81EB2857DFEC00B2F06F /* ContentView.swift */,
 				B4DD81F72857E02800B2F06F /* ButtonsUIView.swift */,
-				B4DD81F92857E07D00B2F06F /* ButtonUIView.swift */,
 				B4DD81FB2857E0BA00B2F06F /* LightsUIView.swift */,
-				B4DD81FD2857E0F800B2F06F /* LightUIView.swift */,
 				B4DD81ED2857DFEF00B2F06F /* Assets.xcassets */,
 				B4DD81EF2857DFEF00B2F06F /* Preview Content */,
 			);
@@ -152,8 +146,6 @@
 				B4DD81FC2857E0BA00B2F06F /* LightsUIView.swift in Sources */,
 				B4DD81F82857E02800B2F06F /* ButtonsUIView.swift in Sources */,
 				B4DD81EC2857DFEC00B2F06F /* ContentView.swift in Sources */,
-				B4DD81FE2857E0F800B2F06F /* LightUIView.swift in Sources */,
-				B4DD81FA2857E07D00B2F06F /* ButtonUIView.swift in Sources */,
 				B4DD81EA2857DFEC00B2F06F /* traffic_light_v1App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

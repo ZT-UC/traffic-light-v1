@@ -48,14 +48,6 @@ struct ButtonsUIView: View {
             })
             .disabled(buttonDisabled)
             }
-        
-        HStack(spacing: 26) {
-            ForEach(0..<3) { index in
-                ButtonUIView()
-                // is this the correct approach?
-            }
-        }
-
     }
 }
 
