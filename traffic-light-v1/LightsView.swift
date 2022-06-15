@@ -1,5 +1,5 @@
 //
-//  LightsUIView.swift
+//  LightsView.swift
 //  traffic-light-v1
 //
 //  Created by Dominik Ď. on 13/06/2022.
@@ -9,7 +9,7 @@ import SwiftUI
 
 // Timer here is just for testing stuff
 
-struct LightsUIView: View {
+struct LightsView: View {
     
     let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
     @State var count: Int = 0
@@ -42,6 +42,6 @@ struct LightUIView: View {
 
 struct LightsUIView_Previews: PreviewProvider {
     static var previews: some View {
-        LightsUIView()
+        LightsView()
     }
 }

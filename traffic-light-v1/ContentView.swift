@@ -11,9 +11,9 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Spacer()
-                LightsUIView()
+                LightsView()
             Spacer()
-                ButtonsUIView()
+                ButtonsView()
             Spacer()
         }
     }

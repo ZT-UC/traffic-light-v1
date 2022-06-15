@@ -1,5 +1,5 @@
 //
-//  ButtonsUIView.swift
+//  ButtonsView.swift
 //  traffic-light-v1
 //
 //  Created by Dominik Ď. on 13/06/2022.
@@ -7,36 +7,34 @@
 
 import SwiftUI
 
-struct ButtonsUIView: View {
-    
-    @State private var buttonDisabled:Bool = true
+struct ButtonsView: View {
+    @State private var PowerButtonDisabled:Bool = true
 
     var body: some View {
-        HStack {
+        HStack (spacing: 26) {
             Button(action: {
                 // code
             }, label: {
                 Image(systemName: "power")
                     .resizable()
                     .frame(width: 50, height: 50)
-                    .foregroundColor(buttonDisabled ? .black : .green)
                     .onTapGesture {
                         withAnimation(.easeInOut(duration: 0.2)) {
-                            buttonDisabled.toggle()
+                            PowerButtonDisabled.toggle()
                         }
                     }
-                    .scaleEffect(buttonDisabled ? 1.0 : 0.75)
+                    .foregroundColor(PowerButtonDisabled ? .black : .green)
+                    .scaleEffect(PowerButtonDisabled ? 1.0 : 0.75)
             })
+            
             Button(action : {
                 // code
             }, label: {
                 Image(systemName: "moon.fill")
                     .resizable()
                     .frame(width: 50, height: 50)
-                    .foregroundColor(buttonDisabled ? .gray.opacity(0.25) : .black)
-                    .padding(.horizontal, 18.0)
             })
-            .disabled(buttonDisabled)
+            .disabled(PowerButtonDisabled)
 
             Button(action : {
                 // code
@@ -44,15 +42,14 @@ struct ButtonsUIView: View {
                 Image(systemName: "sun.max.fill")
                     .resizable()
                     .frame(width: 50, height: 50)
-                    .foregroundColor(buttonDisabled ? .gray.opacity(0.25) : .black)
             })
-            .disabled(buttonDisabled)
-            }
+            .disabled(PowerButtonDisabled)
+        }
     }
 }
 
 struct ButtonsUIView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonsUIView()
+        ButtonsView()
     }
 }
