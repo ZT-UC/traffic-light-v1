@@ -42,22 +42,24 @@ struct LightsButtonsView: View {
     var body: some View {
         // MARK: Spacer #1
         Spacer()
+        
         VStack(spacing: 25) {
             // MARK: Logic for Normal / Night Mode
-            ForEach(0..<1, id: \.self) { light in
+            HStack {
                 VStack {
                     circle
-                        .foregroundColor(0 < properties.countFrom && properties.countFrom <= 7 ? .red : .gray)
-                        //.foregroundColor(.gray)
+                        .foregroundColor(properties.NormalModeButtonTurnedOff == false && 0 <= properties.countFrom && properties.countFrom <= 7 ? .red : .gray)
                     circle
-                        .foregroundColor(6 <= properties.countFrom && properties.countFrom <= 7 ? .orange : .gray)
-                        //.foregroundColor(properties.countFrom % 2 == 0 ? .gray : .orange)
+                        .foregroundColor(
+                            properties.NormalModeButtonTurnedOff == false && 6 <= properties.countFrom && properties.countFrom <= 7
+                            ||
+                            properties.NightModeButtonTurnedOff == false && 0 <= properties.countFrom && properties.countFrom % 2 == 0 ? .orange : .gray)
                     circle
-                        .foregroundColor(properties.countFrom >= 8 && properties.countFrom <= properties.endCountOn ? .green : .gray)
-                        //.foregroundColor(.gray)
+                        .foregroundColor(properties.NormalModeButtonTurnedOff == false && properties.countFrom >= 8 && properties.countFrom <= properties.endCountOn ? .green : .gray)
                 }
                 .frame(height: 300)
             }
+
             Text("Elapsed second(s): \(properties.countFrom)")
         }
         // MARK: Spacer #2
@@ -77,7 +79,7 @@ struct LightsButtonsView: View {
                         
                         if properties.isTimerRunning {
                             properties.isTimerRunning = false
-                            properties.countFrom = 0
+                            resetCounter()
                         }
                     }
                 }
@@ -96,6 +98,7 @@ struct LightsButtonsView: View {
                             if properties.NormalModeButtonTurnedOff == false {
                                 properties.NightModeButtonTurnedOff = false
                                 properties.NormalModeButtonTurnedOff = true
+                                resetCounter()
                             } else {
                                 properties.NightModeButtonTurnedOff.toggle()
                             }
@@ -104,9 +107,8 @@ struct LightsButtonsView: View {
                                 properties.isTimerRunning = true
                             } else {
                                 properties.isTimerRunning = false
-                                properties.countFrom = 0
+                                resetCounter()
                             }
-                            
                         }
                     }
                     .scaleEffect(properties.NightModeButtonTurnedOff ? 1.0 : 0.5)
@@ -124,6 +126,7 @@ struct LightsButtonsView: View {
                             if properties.NightModeButtonTurnedOff == false {
                                 properties.NormalModeButtonTurnedOff = false
                                 properties.NightModeButtonTurnedOff = true
+                                resetCounter()
                             } else {
                                 properties.NormalModeButtonTurnedOff.toggle()
                             }
@@ -132,27 +135,54 @@ struct LightsButtonsView: View {
                                 properties.isTimerRunning = true
                             } else {
                                 properties.isTimerRunning = false
-                                properties.countFrom = 0
+                                resetCounter()
                             }
                         }
                     }
                     .scaleEffect(properties.NormalModeButtonTurnedOff ? 1.0 : 0.5)
                 }
             .disabled(properties.PowerButtonButtonTurnedOff)
-            .onReceive(properties.timer) { _ in
-                if properties.isTimerRunning {
-                    self.properties.countFrom += 1
+            
+            // MARK: Timers for modes
+            .onReceive(properties.timer, perform: { _ in
+                if properties.NormalModeButtonTurnedOff == true {
+                    timerForNightMode()
                 } else {
-                    properties.isTimerRunning = false
+                    timerForNormalMode()
                 }
-
-                if properties.countFrom == 13 {
-                    properties.countFrom = 1
-                }
-            }
+            })
         }
         // MARK: Spacer #3
         Spacer()
+    }
+    
+    func timerForNormalMode() {
+        if properties.isTimerRunning {
+            self.properties.countFrom += 1
+        } else {
+            properties.isTimerRunning = false
+        }
+
+        if properties.countFrom == 13 {
+            properties.countFrom = 1
+        }
+    }
+    
+    func timerForNightMode() {
+        if properties.isTimerRunning {
+            self.properties.countFrom += 1
+        } else {
+            properties.isTimerRunning = false
+        }
+
+        if properties.countFrom == 4 {
+            resetCounter()
+        }
+    }
+    
+    func resetCounter() {
+        properties.countFrom = 0
+        return
     }
 }
 

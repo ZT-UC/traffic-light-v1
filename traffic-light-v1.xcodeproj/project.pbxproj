@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4B1F80F2871F8DC0037C318 /* Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B1F80E2871F8DC0037C318 /* Testing.swift */; };
 		B4DD81EA2857DFEC00B2F06F /* traffic_light_v1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD81E92857DFEC00B2F06F /* traffic_light_v1App.swift */; };
 		B4DD81EC2857DFEC00B2F06F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD81EB2857DFEC00B2F06F /* ContentView.swift */; };
 		B4DD81EE2857DFEF00B2F06F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4DD81ED2857DFEF00B2F06F /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B4B1F80E2871F8DC0037C318 /* Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
 		B4DD81E62857DFEC00B2F06F /* traffic-light-v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "traffic-light-v1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4DD81E92857DFEC00B2F06F /* traffic_light_v1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = traffic_light_v1App.swift; sourceTree = "<group>"; };
 		B4DD81EB2857DFEC00B2F06F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				B4DD81E92857DFEC00B2F06F /* traffic_light_v1App.swift */,
 				B4DD81EB2857DFEC00B2F06F /* ContentView.swift */,
+				B4B1F80E2871F8DC0037C318 /* Testing.swift */,
 				B4DD81ED2857DFEF00B2F06F /* Assets.xcassets */,
 				B4DD81EF2857DFEF00B2F06F /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4B1F80F2871F8DC0037C318 /* Testing.swift in Sources */,
 				B4DD81EC2857DFEC00B2F06F /* ContentView.swift in Sources */,
 				B4DD81EA2857DFEC00B2F06F /* traffic_light_v1App.swift in Sources */,
 			);
